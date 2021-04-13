@@ -6,6 +6,28 @@ body {
     font-family: "Muli", sans-serif;
 }
 
+
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.btn-primary:hover, .btn-primary.disabled {
+    color: #fff !important;
+    background-color: gray !important;
+    border-color: gray !important;
+}
+
+a {
+    color: #cf1767;
+}
+
+a:hover {
+    color: black;
+}
+
 h1 {
     font-size: 3.6rem !important;
     line-height: 1.222 !important;
@@ -119,6 +141,7 @@ h1 {
         .header-main-nav a:focus,
         .header-main-nav a:active {
             color: #ffffff;
+            text-decoration: none !important;
         }
 
     .header-main-nav .current a {
@@ -144,3 +167,26 @@ h1 {
         .header-social li a {
             color: #ffffff;
         }
+
+
+.header-social {
+    font-size: 2rem;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
+    .header-social li {
+        margin-right: 1rem;
+    }
+
+        .header-social li:last-child {
+            margin-right: 0;
+        }
+
+        .header-social li a {
+            color: #ffffff;
+        }
+
+

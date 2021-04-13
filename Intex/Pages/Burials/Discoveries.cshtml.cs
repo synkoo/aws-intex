@@ -38,10 +38,11 @@ namespace Intex.Pages.Burials
         public PaginatedList<Burial> Burial { get; set; }
 
         //Only approved contacts are shown to general users
-        public async Task OnGetAsync(string sortOrder, string searchString, string currentFilter, int? pageIndex)
+        public async Task OnGetAsync(string sortOrder, string searchString, string currentFilter, int? pageIndex, string Sex,
+            string HairColor, string YearFound, string HeadDirection, string ArtifactFound)
         {
             var burials = from c in Context.Burial
-                           select c;
+                          select c;
 
             var isAuthorized = User.IsInRole(Constants.BurialManagersRole) ||
                                User.IsInRole(Constants.BurialAdministratorsRole);
@@ -81,6 +82,31 @@ namespace Intex.Pages.Burials
             if (!String.IsNullOrEmpty(searchString))
             {
                 burials = burials.Where(b => b.BurialId.Contains(searchString));
+            }
+
+            if (!String.IsNullOrEmpty(Sex))
+            {
+                burials = burials.Where(b => b.GenderGe.Equals(Sex));
+            }
+
+            if (!String.IsNullOrEmpty(HairColor))
+            {
+                burials = burials.Where(b => b.HairColor.Equals(HairColor));
+            }
+
+            if (!String.IsNullOrEmpty(YearFound))
+            {
+                burials = burials.Where(b => b.YearFound.Equals(YearFound));
+            }
+
+            if (!String.IsNullOrEmpty(HeadDirection))
+            {
+                burials = burials.Where(b => b.HeadDirection.Equals(HeadDirection));
+            }
+
+            if (!String.IsNullOrEmpty(ArtifactFound))
+            {
+                burials = burials.Where(b => b.ArtifactFound.Equals(ArtifactFound));
             }
 
             switch (sortOrder)

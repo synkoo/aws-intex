@@ -10,6 +10,8 @@
         var files = System.IO.Directory.GetFiles(@"wwwroot\images\Photos", "*.jpg");
         return files[rand.Next(files.Length)].Remove(files[rand.Next(files.Length)].IndexOf("wwwroot"), "wwwroot".Length);
     }
+
+    ViewData["Title"] = "Featured Burials";
 }
 
 <!-- Bootstrap -->
@@ -36,81 +38,58 @@
                     <div class="col-md-3">
                         <div class="category-sidebar">
                             <div class="widget category-list">
-                                <p>
-                                    <a asp-page="Create">Create New</a>
-                                </p>
 
                                 <form asp-page="./Index" method="get">
-                                    <div class="form-actions no-color">
-                                        <p>
-                                            Find by name:
-                                            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-                                            <input type="submit" value="Search" class="btn btn-primary" /> |
-                                            <a asp-page="./Index">Back to full List</a>
-                                        </p>
-                                    </div>
+
+                                    <input type="text" name="SearchString" placeholder="Search Term" value="@Model.CurrentFilter" />
+
+                                    <select name="Sex">
+                                        <option value="">Sex</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Undetermined">Undetermined</option>
+                                    </select>
+
+                                    <select name="HairColor">
+                                        <option value="">Hair Color</option>
+                                        <option value="Brown">Brown</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Blonde">Blonde</option>
+                                    </select>
+
+
+                                    <select name="YearFound">
+                                        <option value="">Year Found</option>
+                                        <option value="1998">1998</option>
+                                        <option value="2000">2000</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2005">2005</option>
+                                    </select>
+
+                                    <select name="HeadDirection">
+                                        <option value="">Head Direction</option>
+                                        <option value="East">East</option>
+                                        <option value="West">West</option>
+                                    </select>
+
+                                    <select name="ArtifactFound">
+                                        <option value="">Artifact Found</option>
+                                        <option value="TRUE">Yes</option>
+                                        <option value="FALSE">No</option>
+                                    </select>
+
+                                    <br />
+                                    <br />
+
+                                    <input type="submit" value="Search" class="btn btn-primary" />
+
+                                    <br />
+                                    <br />
+                                    <a asp-page="./Index">Clear Filters</a>
+
                                 </form>
                             </div>
-
-                            <div class="widget category-list">
-                                <h4 class="widget-header">Nearby</h4>
-                                <ul class="category-list">
-                                    <li><a href="category.html">New York <span>93</span></a></li>
-                                    <li><a href="category.html">New Jersy <span>233</span></a></li>
-                                    <li><a href="category.html">Florida  <span>183</span></a></li>
-                                    <li><a href="category.html">California <span>120</span></a></li>
-                                    <li><a href="category.html">Texas <span>40</span></a></li>
-                                    <li><a href="category.html">Alaska <span>81</span></a></li>
-                                </ul>
-                            </div>
-
-                            <div class="widget filter">
-                                <h4 class="widget-header">Show Produts</h4>
-                                <select>
-                                    <option>Popularity</option>
-                                    <option value="1">Top rated</option>
-                                    <option value="2">Lowest Price</option>
-                                    <option value="4">Highest Price</option>
-                                </select>
-                            </div>
-
-                            <div class="widget price-range">
-                                <h4 class="widget-header">Price Range</h4>
-                                <div class="block">
-                                    <b>$10</b>
-                                    <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" />
-                                    <b>$5000</b>
-                                </div>
-                            </div>
-
-                            <div class="widget product-shorting">
-                                <h4 class="widget-header">By Condition</h4>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        Brand New
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        Almost New
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        Gently New
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        Havely New
-                                    </label>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                     <div class="col-md-9">

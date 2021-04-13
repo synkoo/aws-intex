@@ -2,56 +2,61 @@
 @model Intex.Pages.Burials.DiscoveriesModel
 
 @{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<link href="~/css/discoveries.css" rel="stylesheet" />
 
-<html>
-<head>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/discoveries.css" />
-</head>
-
-<header class="s-header">
-
-    <div class="header-logo">
-        <a class="site-logo" asp-area="" asp-page="/Index">
-            <img src="~/images/byuWhite.png" alt="BYU" />
-        </a>
-    </div>
-
-    <nav class="header-nav-wrap">
-
-        <ul class="header-main-nav">
-            <li>
-                <a asp-area="" asp-page="/Burials/Index">Featured</a>
-            </li>
-            <li>
-                <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
-            </li>
-            <li><partial name="_LoginPartial" /></li>
-        </ul>
-
-    </nav>
-
-</header>
-<body>
+<body style="margin: 10%; background-color: white;">
     <div class="container mt-5 pt-5">
-        <p>
-            <a asp-page="Create"><btn class="btn btn-success">Create New</btn></a>
-        </p>
 
-        <form asp-page="./Index" method="get">
-            <div class="form-actions no-color">
-                <p>
-                    Find by name:
-                    <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-                    <input type="submit" value="Search" class="btn btn-primary" /> |
-                    <a asp-page="./Discoveries">Back to full List</a>
-                </p>
-            </div>
+        <a asp-page="./Discoveries">Clear Filters</a>
+
+        <form asp-page="./Discoveries" method="get">
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search Term" style="display: inline;" />
+
+            <select name="Sex" style="display: inline;">
+                <option value="">Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Undetermined">Undetermined</option>
+            </select>
+
+            <select name="HairColor" style="display: inline;">
+                <option value="">Hair Color</option>
+                <option value="Brown">Brown</option>
+                <option value="Red">Red</option>
+                <option value="Black">Black</option>
+                <option value="Blonde">Blonde</option>
+            </select>
+
+
+            <select name="YearFound" style="display: inline;">
+                <option value="">Year Found</option>
+                <option value="1998">1998</option>
+                <option value="2000">2000</option>
+                <option value="2003">2003</option>
+                <option value="2005">2005</option>
+            </select>
+
+            <select name="HeadDirection" style="display: inline;">
+                <option value="">Head Direction</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+            </select>
+
+            <select name="ArtifactFound" style="display: inline;">
+                <option value="">Artifact Found</option>
+                <option value="TRUE">Yes</option>
+                <option value="FALSE">No</option>
+            </select>
+
+
+
+            <input type="submit" value="Search" class="btn btn-primary" style="display: inline; float: right;"/>
+
         </form>
+
 
         <table class="table">
             <thead>
@@ -86,53 +91,57 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Burial[0].Status)
                     </th>
+                    <th>
+                        <a asp-page="Create"><btn class="btn btn-primary">Create New</btn></a>
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model.Burial)
                 {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BurialId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SouthToHead)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SouthToFeet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EastToHead)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EastToFeet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LengthOfRemains)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BurialDepth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BurialId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SouthToHead)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SouthToFeet)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EastToHead)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EastToFeet)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LengthOfRemains)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BurialDepth)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
 
-        @*The Edit and Delete links are only rendered for users with the appropriate permissions*@
+                        @*The Edit and Delete links are only rendered for users with the appropriate permissions*@
 
-        <td>
-            @if ((await AuthorizationService.AuthorizeAsync(User, item, BurialOperations.Update)).Succeeded)
-            {
-<a asp-page="./Edit" asp-route-id="@item.BurialId">Edit</a>
-                    <text> | </text>}
-            <a asp-page="./Details" asp-route-id="@item.BurialId">Details</a>
+                        <td>
+                            @if ((await AuthorizationService.AuthorizeAsync(User, item, BurialOperations.Update)).Succeeded)
+                            {
+                                <a asp-page="./Edit" asp-route-id="@item.BurialId">Edit</a>
+                                <text> | </text>}
+                            <a asp-page="./Details" asp-route-id="@item.BurialId">Details</a>
 
-            @if ((await AuthorizationService.AuthorizeAsync(User, item, BurialOperations.Delete)).Succeeded)
-            {
-<text> | </text>
-                    <a asp-page="./Delete" asp-route-id="@item.BurialId">Delete</a>}
+                            @if ((await AuthorizationService.AuthorizeAsync(User, item, BurialOperations.Delete)).Succeeded)
+                            {
+                                <text> | </text>
+                                <a asp-page="./Delete" asp-route-id="@item.BurialId">Delete</a>}
 
-        </td>
-    </tr>            }
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
 
@@ -155,8 +164,5 @@
         </a>
     </div>
 
-    <div class="text-center">
-        <p class="mt-5 mb-3 text-muted">&copy; Copyright BYU 2021 | IS Core, Team 4-1</p>
-    </div>
 </body>
 </html>

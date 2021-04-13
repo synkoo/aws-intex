@@ -2,36 +2,13 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-<head>
-    <link rel="stylesheet" href="~/css/style.css" />
-</head>
 
-<header class="s-header">
-
-    <div class="header-logo">
-        <a class="site-logo" asp-area="" asp-page="/Index">
-            <img src="~/images/byuWhite.png" alt="BYU"/>
-        </a>
-    </div>
-
-    <nav class="header-nav-wrap">
-
-        <ul class="header-main-nav">
-            <li>
-                <a asp-area="" asp-page="/Burials/Index">Featured</a>
-            </li>
-            <li>
-                <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
-            </li>
-            <li><partial name="_LoginPartial" /></li>
-        </ul>
-
-    </nav>
-
-</header>
-
-<body style="background-color: white; margin: 50px;">
+<link href="~/css/discoveries.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<body style="background-color: white; margin: 10%;">
 
     <h1>@ViewData["Title"]</h1>
 
