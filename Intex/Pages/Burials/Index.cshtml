@@ -15,201 +15,213 @@
 <!-- Bootstrap -->
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 <!-- Font Awesome -->
-<link href="~/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="~/css/style.css" rel="stylesheet">
 
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body style="background-color: white; margin: 50px;">
-    
 
-    <section class="section-sm">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+<body>
+    <div style="background-color: white; margin: 50px;">
 
+        <section class="section-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="category-sidebar">
-                        <div class="widget category-list">
-                            <p>
-                                <a asp-page="Create">Create New</a>
-                            </p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="category-sidebar">
+                            <div class="widget category-list">
+                                <p>
+                                    <a asp-page="Create">Create New</a>
+                                </p>
 
-                            <form asp-page="./Index" method="get">
-                                <div class="form-actions no-color">
-                                    <p>
-                                        Find by name:
-                                        <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-                                        <input type="submit" value="Search" class="btn btn-primary" /> |
-                                        <a asp-page="./Index">Back to full List</a>
-                                    </p>
+                                <form asp-page="./Index" method="get">
+                                    <div class="form-actions no-color">
+                                        <p>
+                                            Find by name:
+                                            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+                                            <input type="submit" value="Search" class="btn btn-primary" /> |
+                                            <a asp-page="./Index">Back to full List</a>
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="widget category-list">
+                                <h4 class="widget-header">Nearby</h4>
+                                <ul class="category-list">
+                                    <li><a href="category.html">New York <span>93</span></a></li>
+                                    <li><a href="category.html">New Jersy <span>233</span></a></li>
+                                    <li><a href="category.html">Florida  <span>183</span></a></li>
+                                    <li><a href="category.html">California <span>120</span></a></li>
+                                    <li><a href="category.html">Texas <span>40</span></a></li>
+                                    <li><a href="category.html">Alaska <span>81</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="widget filter">
+                                <h4 class="widget-header">Show Produts</h4>
+                                <select>
+                                    <option>Popularity</option>
+                                    <option value="1">Top rated</option>
+                                    <option value="2">Lowest Price</option>
+                                    <option value="4">Highest Price</option>
+                                </select>
+                            </div>
+
+                            <div class="widget price-range">
+                                <h4 class="widget-header">Price Range</h4>
+                                <div class="block">
+                                    <b>$10</b>
+                                    <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" />
+                                    <b>$5000</b>
                                 </div>
-                            </form>
-                        </div>
-
-                        <div class="widget category-list">
-                            <h4 class="widget-header">Nearby</h4>
-                            <ul class="category-list">
-                                <li><a href="category.html">New York <span>93</span></a></li>
-                                <li><a href="category.html">New Jersy <span>233</span></a></li>
-                                <li><a href="category.html">Florida  <span>183</span></a></li>
-                                <li><a href="category.html">California <span>120</span></a></li>
-                                <li><a href="category.html">Texas <span>40</span></a></li>
-                                <li><a href="category.html">Alaska <span>81</span></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="widget filter">
-                            <h4 class="widget-header">Show Produts</h4>
-                            <select>
-                                <option>Popularity</option>
-                                <option value="1">Top rated</option>
-                                <option value="2">Lowest Price</option>
-                                <option value="4">Highest Price</option>
-                            </select>
-                        </div>
-
-                        <div class="widget price-range">
-                            <h4 class="widget-header">Price Range</h4>
-                            <div class="block">
-                                <b>$10</b>
-                                <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" />
-                                <b>$5000</b>
                             </div>
-                        </div>
 
-                        <div class="widget product-shorting">
-                            <h4 class="widget-header">By Condition</h4>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
-                                    Brand New
-                                </label>
+                            <div class="widget product-shorting">
+                                <h4 class="widget-header">By Condition</h4>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        Brand New
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        Almost New
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        Gently New
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        Havely New
+                                    </label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
-                                    Almost New
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
-                                    Gently New
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="">
-                                    Havely New
-                                </label>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="category-search-filter">
+                    <div class="col-md-9">
+                        <div class="category-search-filter">
 
-                        <p>Featured Burials</p>
-                    </div>
-                    <div class="product-grid-list">
-                        <div class="row mt-30">
-                            @foreach (var b in Model.Burial)
-                            {
-                                <div class="col-sm-12 col-lg-4 col-md-6">
-                                    <!-- product card -->
-                                    <div class="product-item bg-light">
-                                        <div class="card">
-                                            <div class="thumb-content">
-                                                <!-- <div class="price">$200</div> -->
-                                                <a href="">
-                                                    <img class="card-img-top img-fluid" src="@GetPhoto()" alt="Card image cap">
-                                                </a>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title"><a href="">@b.BurialId</a></h4>
-                                                <ul class="list-inline product-meta">
-                                                    <li class="list-inline-item">
-                                                        <a href=""><i class="fa fa-venus-mars"></i>Sex: @b.GenderGe</a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <a href="">
-                                                            <i class="fa fa-calendar"></i>
-                                                            @if (b.DayFound == null)
-                                                            {
-                                                                <a>Date: Not available</a>
-                                                            }
+                            <p>Featured Burials</p>
+                        </div>
+                        <div class="product-grid-list">
+                            <div class="row mt-30">
+                                @foreach (var b in Model.Burial)
+                                {
+                                    <div class="col-sm-12 col-lg-4 col-md-6">
+                                        <!-- product card -->
+                                        <div class="product-item bg-light">
+                                            <div class="card">
+                                                <div class="thumb-content">
+                                                    <!-- <div class="price">$200</div> -->
+                                                    <a asp-page="./Details" asp-route-id="@b.BurialId">
+                                                        <img class="card-img-top img-fluid" src="@GetPhoto()" alt="Card image cap">
+                                                    </a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title"><a asp-page="./Details" asp-route-id="@b.BurialId">@b.BurialId</a></h4>
+                                                    <ul class="list-inline product-meta">
+                                                        <li class="list-inline-item">
+                                                            <a asp-page="./Details" asp-route-id="@b.BurialId"><i class="fa fa-venus-mars"></i>Sex: @b.GenderGe</a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a asp-page="./Details" asp-route-id="@b.BurialId">
+                                                                <i class="fa fa-calendar"></i>
+                                                                @if (b.DayFound == null)
+                                                                {
+                                                                    <a>Date: Not available</a>
+                                                                }
 
-                                                            else
-                                                            {
-                                                                <a>Date: @b.DayFound @b.MonthFound, @b.YearFound</a>
-                                                            }
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <a href="">
-                                                            <i class="fa fa-user"></i>
-                                                            @if (b.HairColor == null)
-                                                            {
-                                                                <a>Hair color: Not available</a>
-                                                            }
+                                                                else
+                                                                {
+                                                                    <a>Date: @b.DayFound @b.MonthFound, @b.YearFound</a>
+                                                                }
+                                                            </a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <a asp-page="./Details" asp-route-id="@b.BurialId">
+                                                                <i class="fa fa-user"></i>
+                                                                @if (b.HairColor == null)
+                                                                {
+                                                                    <a>Hair color: Not available</a>
+                                                                }
 
-                                                            else
-                                                            {
-                                                                <a>Hair color: @b.HairColor</a>
-                                                            }
+                                                                else
+                                                                {
+                                                                    <a>Hair color: @b.HairColor</a>
+                                                                }
 
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                                            </a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            @if ((await AuthorizationService.AuthorizeAsync(User, b, BurialOperations.Update)).Succeeded)
+                                                            {
+                                                                <a asp-page="./Edit" asp-route-id="@b.BurialId">Edit</a>
+                                                                <text> | </text>
+                                                            }
+                                                            <a asp-page="./Details" asp-route-id="@b.BurialId">Details</a>
+
+                                                            @if ((await AuthorizationService.AuthorizeAsync(User, b, BurialOperations.Delete)).Succeeded)
+                                                            {
+                                                                <text> | </text>
+                                                                <a asp-page="./Delete" asp-route-id="@b.BurialId">Delete</a>
+                                                            }
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                @{
-                    var prevDisabled = !Model.Burial.HasPreviousPage ? "disabled" : "";
-                    var nextDisabled = !Model.Burial.HasNextPage ? "disabled" : "";
-                }
+                    @{
+                        var prevDisabled = !Model.Burial.HasPreviousPage ? "disabled" : "";
+                        var nextDisabled = !Model.Burial.HasNextPage ? "disabled" : "";
+                    }
 
-                <div class="pagination justify-content-center">
-                    <nav aria-label="Page navigation example">
-                        <a style="background-color: black; border: none;" asp-page="./Index"
-                           asp-route-sortOrder="@Model.CurrentSort"
-                           asp-route-pageIndex="@(Model.Burial.PageIndex - 1)"
-                           asp-route-currentFilter="@Model.CurrentFilter"
-                           class="btn btn-primary @prevDisabled">
-                            Previous
-                        </a>
-                        <a style="background-color: black; border: none;" asp-page="./Index"
-                           asp-route-sortOrder="@Model.CurrentSort"
-                           asp-route-pageIndex="@(Model.Burial.PageIndex + 1)"
-                           asp-route-currentFilter="@Model.CurrentFilter"
-                           class="btn btn-primary @nextDisabled">
-                            Next
-                        </a>
-                    </nav>
+                    <div class="pagination justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <a style="background-color: black; border: none;" asp-page="./Index"
+                               asp-route-sortOrder="@Model.CurrentSort"
+                               asp-route-pageIndex="@(Model.Burial.PageIndex - 1)"
+                               asp-route-currentFilter="@Model.CurrentFilter"
+                               class="btn btn-primary @prevDisabled">
+                                Previous
+                            </a>
+                            <a style="background-color: black; border: none;" asp-page="./Index"
+                               asp-route-sortOrder="@Model.CurrentSort"
+                               asp-route-pageIndex="@(Model.Burial.PageIndex + 1)"
+                               asp-route-currentFilter="@Model.CurrentFilter"
+                               class="btn btn-primary @nextDisabled">
+                                Next
+                            </a>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
+    </div>
     </section>
 
 
 
-    
-    
+
+    </div>
 </body>
 </html>
