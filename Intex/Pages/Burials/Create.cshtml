@@ -1,0 +1,101 @@
+@page
+@model Intex.Pages.Burials.CreateModel
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/discoveries.css" />
+</head>
+
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" asp-area="" asp-page="/Index">
+            <img src="~/images/byuWhite.png" alt="BYU" />
+        </a>
+    </div>
+
+    <nav class="header-nav-wrap">
+
+        <ul class="header-main-nav">
+            <li>
+                <a asp-area="" asp-page="/Burials/Index">Featured</a>
+            </li>
+            <li>
+                <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
+            </li>
+            <li><partial name="_LoginPartial" /></li>
+        </ul>
+
+    </nav>
+
+</header>
+<body>
+    <div class="container mt-5 pt-5">
+        <h4>Burial</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Burial.BurialId" class="control-label">Burial Name</label>
+                        <input asp-for="Burial.BurialId" class="form-control" />
+                        <span asp-validation-for="Burial.BurialId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Burial.SouthToHead" class="control-label">South to Head</label>
+                        <input asp-for="Burial.SouthToHead" class="form-control" />
+                        <span asp-validation-for="Burial.SouthToHead" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Burial.SouthToFeet" class="control-label">South to Feet</label>
+                        <input asp-for="Burial.SouthToFeet" class="form-control" />
+                        <span asp-validation-for="Burial.SouthToFeet" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Burial.EastToHead" class="control-label">East to Head</label>
+                        <input asp-for="Burial.EastToHead" class="form-control" />
+                        <span asp-validation-for="Burial.EastToHead" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Burial.EastToFeet" class="control-label">East to Feet</label>
+                        <input asp-for="Burial.EastToFeet" class="form-control" />
+                        <span asp-validation-for="Burial.EastToFeet" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Burial.LengthOfRemains" class="control-label">Length of Remains</label>
+                        <input asp-for="Burial.LengthOfRemains" class="form-control" />
+                        <span asp-validation-for="Burial.LengthOfRemains" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Burial.BurialDepth" class="control-label">Burial Depth</label>
+                        <input asp-for="Burial.BurialDepth" class="form-control" />
+                        <span asp-validation-for="Burial.BurialDepth" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <a asp-page="Index">Back to List</a>
+    </div>
+    <div class="text-center">
+        <p class="mt-5 mb-3 text-muted">&copy; Copyright BYU 2021 | IS Core, Team 4-1</p>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

@@ -1,0 +1,35 @@
+@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "Confirm email";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" asp-area="" asp-page="/Index">
+            <img src="~/images/byuWhite.png" alt="BYU" />
+        </a>
+    </div>
+
+    <nav class="header-nav-wrap">
+
+        <ul class="header-main-nav">
+            <li>
+                <a asp-area="" asp-page="/Burials/Index">Featured</a>
+            </li>
+            <li>
+                <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
+            </li>
+            <li><partial name="_LoginPartial" /></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<h1>@ViewData["Title"]</h1>

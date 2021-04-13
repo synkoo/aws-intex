@@ -1,0 +1,49 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" asp-area="" asp-page="/Index">
+            <img src="~/images/byuWhite.png" alt="BYU" />
+        </a>
+    </div>
+
+    <nav class="header-nav-wrap">
+
+        <ul class="header-main-nav">
+            <li>
+                <a asp-area="" asp-page="/Burials/Index">Featured</a>
+            </li>
+            <li>
+                <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
+            </li>
+            <li><partial name="_LoginPartial" /></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<body>
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+            </form>
+        }
+        else
+        {
+            <p>You have successfully logged out of Fag El Gamous.</p>
+        }
+    }
+</body>

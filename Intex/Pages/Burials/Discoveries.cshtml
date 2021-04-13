@@ -1,0 +1,162 @@
+@page "{searchString?}"
+@model Intex.Pages.Burials.DiscoveriesModel
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/discoveries.css" />
+</head>
+
+<header class="s-header">
+
+    <div class="header-logo">
+        <a class="site-logo" asp-area="" asp-page="/Index">
+            <img src="~/images/byuWhite.png" alt="BYU" />
+        </a>
+    </div>
+
+    <nav class="header-nav-wrap">
+
+        <ul class="header-main-nav">
+            <li>
+                <a asp-area="" asp-page="/Burials/Index">Featured</a>
+            </li>
+            <li>
+                <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
+            </li>
+            <li><partial name="_LoginPartial" /></li>
+        </ul>
+
+    </nav>
+
+</header>
+<body>
+    <div class="container mt-5 pt-5">
+        <p>
+            <a asp-page="Create"><btn class="btn btn-success">Create New</btn></a>
+        </p>
+
+        <form asp-page="./Index" method="get">
+            <div class="form-actions no-color">
+                <p>
+                    Find by name:
+                    <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+                    <input type="submit" value="Search" class="btn btn-primary" /> |
+                    <a asp-page="./Discoveries">Back to full List</a>
+                </p>
+            </div>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-page="./Discoveries" asp-route-sortOrder="@Model.NameSort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                            Burial Name
+                        </a>
+                    </th>
+                    <th>
+                        South to Head
+                    </th>
+                    <th>
+                        South to Feet
+                    </th>
+                    <th>
+                        East to Head
+                    </th>
+                    <th>
+                        East to Feet
+                    </th>
+                    <th>
+                        <a asp-page="./Discoveries" asp-route-sortOrder="@Model.LengthSort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                            Length of Remains
+                        </a>
+                    </th>
+                    <th>
+                        Burial Depth
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Burial[0].Status)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Burial)
+                {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BurialId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SouthToHead)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SouthToFeet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EastToHead)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EastToFeet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LengthOfRemains)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BurialDepth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+
+        @*The Edit and Delete links are only rendered for users with the appropriate permissions*@
+
+        <td>
+            @if ((await AuthorizationService.AuthorizeAsync(User, item, BurialOperations.Update)).Succeeded)
+            {
+<a asp-page="./Edit" asp-route-id="@item.BurialId">Edit</a>
+                    <text> | </text>}
+            <a asp-page="./Details" asp-route-id="@item.BurialId">Details</a>
+
+            @if ((await AuthorizationService.AuthorizeAsync(User, item, BurialOperations.Delete)).Succeeded)
+            {
+<text> | </text>
+                    <a asp-page="./Delete" asp-route-id="@item.BurialId">Delete</a>}
+
+        </td>
+    </tr>            }
+            </tbody>
+        </table>
+
+        @{ var prevDisabled = !Model.Burial.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.Burial.HasNextPage ? "disabled" : ""; }
+
+        <a asp-page="./Discoveries"
+           asp-route-sortOrder="@Model.CurrentSort"
+           asp-route-pageIndex="@(Model.Burial.PageIndex - 1)"
+           asp-route-currentFilter="@Model.CurrentFilter"
+           class="btn btn-primary @prevDisabled">
+            Previous
+        </a>
+        <a asp-page="./Discoveries"
+           asp-route-sortOrder="@Model.CurrentSort"
+           asp-route-pageIndex="@(Model.Burial.PageIndex + 1)"
+           asp-route-currentFilter="@Model.CurrentFilter"
+           class="btn btn-primary @nextDisabled">
+            Next
+        </a>
+    </div>
+
+    <div class="text-center">
+        <p class="mt-5 mb-3 text-muted">&copy; Copyright BYU 2021 | IS Core, Team 4-1</p>
+    </div>
+</body>
+</html>

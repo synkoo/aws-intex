@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>@ViewData["Title"]</title>
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link href="~/css/base.css" rel="stylesheet" />
+    <link href="~/css/vendor.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+
+    <!-- script
+    ================================================== -->
+    <script src="~/js/modernizr.js"></script>
+    <script src="~/js/pace.min.js"></script>
+
+</head>
+
+    <!-- site header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" asp-area="" asp-page="/Index">
+                <img src="~/images/byuWhite.png" alt="BYU"/>
+            </a>
+        </div>
+
+        <nav class="header-nav-wrap">
+
+            <ul class="header-main-nav">
+                <li>
+                    <a asp-area="" asp-page="/Burials/Index">Featured</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Burials/Discoveries">Discoveries</a>
+                </li>
+                <li><partial name="_LoginPartial" /></li>
+            </ul>
+
+        </nav>
+
+    </header> <!-- end s-header -->
+
+    <body>
+        @RenderBody()
+    </body>
+
+    <!-- footer
+        ================================================== -->
+    <footer>
+        <div class="row">
+            <div class="column large-full ss-copyright">
+                <span>© Copyright BYU 2021</span>
+                <span>IS Core, Team 4-1</a></span>
+            </div>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Java Script
+    ================================================== -->
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js"></script>
+
+</html>
+
+
+

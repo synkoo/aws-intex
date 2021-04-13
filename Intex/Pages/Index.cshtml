@@ -1,0 +1,94 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Fag El Gamous";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+
+}
+
+<link href="~/css/base.css" rel="stylesheet" />
+<link href="~/css/vendor.css" rel="stylesheet" />
+<link href="~/css/main.css" rel="stylesheet" />
+
+<!-- intro
+    ================================================== -->
+<section id="intro" class="s-intro target-section">
+
+    <div class="row intro-content">
+
+        <div class="column large-9 mob-full intro-text">
+            <h1>
+                Fag el-Gamous <br>
+                Secrets of the <br>
+                Ancient Past
+            </h1>
+        </div>
+
+        <div class="intro-scroll">
+            <a asp-controller="Home" asp-action="Burials" class="intro-scroll-link">
+                View Burials
+            </a>
+        </div>
+
+        <div class="intro-grid"></div>
+        <div class="intro-pic"></div>
+
+    </div> <!-- end row -->
+
+</section> <!-- end intro -->
+<!-- about
+================================================== -->
+
+<div style="background-color: white;">
+    <br />
+    <div class="about-me">
+
+        <div class="row heading-block" data-aos="fade-up">
+            <div class="column large-full">
+                <h2 class="section-heading">About</h2>
+            </div>
+        </div>
+
+        <div class="row about-me__content" data-aos="fade-up">
+            <div class="column large-full about-me__text">
+                <p class="lead">
+                    Fag el-Gamous is an ancient egyptian burial site discovered
+                    by a team of Brigham Young University archeologists in 1980.
+                </p>
+
+                <img src="~/images/site.jpg" />
+
+                <p>
+                    The skeletons and natural mummies (i.e. not the result of a professional mummification as used for royalty),
+                    seem to be common people; "The bodies have been well preserved, so the organs and remains are virtually complete.
+                    The preservation results from sealing in the moisture and the atmosphere of the burial spot." By 2014,
+                    roughly 1,000 bodies had been excavated at the site.
+                </p>
+
+                <p>
+                    In 1988, it was noted by the researchers that the graveyard contained an unexpected number of blondes
+                    amongst the naturally mummified bodies, as well as oddities in tooth decay amongst the buried; "Of those
+                    whose hair was preserved 54% were blondes or redheads, and the percentage grows to 87% when light-brown
+                    hair color is added". In 2014, it was revealed that burials seem to be clustered by hair-colour,
+                    those with red-hair are in one area, those with blonde hair in another.
+                </p>
+
+                <p>
+                    In an e-mail to Newsweek, Kerry Muhlestein explained "In a square that is 5 by 5 meters across and usually
+                    just over 2 meters deep, we will typically find about 40 burials. The cemetery is very large and so far seems
+                    to maintain that kind of burial density throughout. Thus, the math suggests that there are over a million mummies
+                    in the cemetery, though we cannot be certain of this without further exploration and a thorough academic review
+                    process."
+
+
+                </p>
+
+                <p>
+                    -Cited from Wikipedia <a href="https://en.wikipedia.org/wiki/Fagg_El_Gamous">read more</a>
+                </p>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div> <!-- end about-me -->
+</div>
