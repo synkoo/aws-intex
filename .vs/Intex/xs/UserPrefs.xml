@@ -1,15 +1,7 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{F45011B0-4880-4F6A-A4A3-B5BC0593BD8C}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Intex/Areas/Identity/Pages/Account/Login.cshtml" Line="13" Column="66" IsPinned="True" />
-      <File FileName="Intex/Areas/Identity/Pages/_Layout.cshtml" IsPinned="True" />
-      <File FileName="Intex/Pages/Burials/Edit.cshtml.cs" Line="21" Column="1" />
-      <File FileName="Intex/Pages/Burials/Edit.cshtml" />
-      <File FileName="Intex/Pages/Burials/Delete.cshtml.cs" />
-      <File FileName="Intex/Pages/Burials/Discoveries.cshtml" Line="18" Column="1" />
-      <File FileName="Intex/Pages/Burials/Discoveries.cshtml.cs" Line="58" Column="1" />
-      <File FileName="Intex/Pages/Burials/Index.cshtml.cs" Line="62" Column="49" />
-      <File FileName="Intex/Pages/Burials/Index.cshtml" Line="63" Column="148" />
+      <File FileName="Intex/Pages/Burials/Discoveries.cshtml.cs" Line="58" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,9 +14,7 @@
               <Node name="Areas" expanded="True">
                 <Node name="Identity" expanded="True">
                   <Node name="Pages" expanded="True">
-                    <Node name="Account" expanded="True">
-                      <Node name="Login.cshtml" selected="True" />
-                    </Node>
+                    <Node name="Account" expanded="True" />
                   </Node>
                 </Node>
               </Node>
@@ -33,7 +23,9 @@
                   <Node name="Create.cshtml" expanded="True" />
                   <Node name="Delete.cshtml" expanded="True" />
                   <Node name="Details.cshtml" expanded="True" />
-                  <Node name="Discoveries.cshtml" expanded="True" />
+                  <Node name="Discoveries.cshtml" expanded="True">
+                    <Node name="Discoveries.cshtml.cs" selected="True" />
+                  </Node>
                   <Node name="Edit.cshtml" expanded="True" />
                   <Node name="Index.cshtml" expanded="True" />
                 </Node>

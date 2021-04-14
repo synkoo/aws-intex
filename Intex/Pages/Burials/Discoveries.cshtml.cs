@@ -14,6 +14,7 @@ using Intex.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Extensions.Configuration;
+using System.Web;
 
 namespace Intex.Pages.Burials
 {
@@ -54,7 +55,8 @@ namespace Intex.Pages.Burials
 
             var currentUserId = UserManager.GetUserId(User);
 
-            CurrentFilter = searchString;
+            //Encode input to prevent XSS
+            CurrentFilter = HttpUtility.HtmlEncode(searchString);
             FilterSex = Sex;
             FilterHairColor = HairColor;
             FilterYearFound = YearFound;
