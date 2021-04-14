@@ -1156,3 +1156,4 @@ C:\Users\elima\Source\Repos\aws-intex\Intex\obj\Debug\net5.0\Intex.dll
 C:\Users\elima\Source\Repos\aws-intex\Intex\obj\Debug\net5.0\ref\Intex.dll
 C:\Users\elima\Source\Repos\aws-intex\Intex\obj\Debug\net5.0\Intex.pdb
 C:\Users\elima\Source\Repos\aws-intex\Intex\obj\Debug\net5.0\Intex.genruntimeconfig.cache
+C:\Users\elima\Source\Repos\aws-intex\Intex\obj\Debug\net5.0\Intex.csprojAssemblyReference.cache
