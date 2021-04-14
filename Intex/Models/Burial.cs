@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -7,6 +8,7 @@ namespace Intex.Models
 {
     public partial class Burial
     {
+        [Required]
         public string BurialId { get; set; }
         public string BurialLocationNs { get; set; }
         public string BurialLocationEw { get; set; }
