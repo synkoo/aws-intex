@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Sangyoon/Desktop/Intex Github/intex-final/Intex/Intex.csproj": {}
+    "C:\\Users\\elima\\Source\\Repos\\aws-intex\\Intex\\Intex.csproj": {}
   },
   "projects": {
-    "/Users/Sangyoon/Desktop/Intex Github/intex-final/Intex/Intex.csproj": {
+    "C:\\Users\\elima\\Source\\Repos\\aws-intex\\Intex\\Intex.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Sangyoon/Desktop/Intex Github/intex-final/Intex/Intex.csproj",
+        "projectUniqueName": "C:\\Users\\elima\\Source\\Repos\\aws-intex\\Intex\\Intex.csproj",
         "projectName": "Intex",
-        "projectPath": "/Users/Sangyoon/Desktop/Intex Github/intex-final/Intex/Intex.csproj",
-        "packagesPath": "/Users/Sangyoon/.nuget/packages/",
-        "outputPath": "/Users/Sangyoon/Desktop/Intex Github/intex-final/Intex/obj/",
+        "projectPath": "C:\\Users\\elima\\Source\\Repos\\aws-intex\\Intex\\Intex.csproj",
+        "packagesPath": "C:\\Users\\elima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elima\\Source\\Repos\\aws-intex\\Intex\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/Sangyoon/.config/NuGet/NuGet.Config"
+          "C:\\Users\\elima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -95,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
