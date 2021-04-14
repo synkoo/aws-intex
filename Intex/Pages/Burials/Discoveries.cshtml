@@ -16,14 +16,14 @@
             <input type="text" name="SearchString" value="@Model.CurrentFilter" placeholder="Search Term" style="display: inline;" />
 
             <select name="Sex" style="display: inline;">
-                <option value="">Sex</option>
+                <option value="">@(String.IsNullOrEmpty(Model.FilterSex)?"Sex":Model.FilterSex)</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Undetermined">Undetermined</option>
             </select>
-
+            
             <select name="HairColor" style="display: inline;">
-                <option value="">Hair Color</option>
+                <option value="">@(String.IsNullOrEmpty(Model.FilterHairColor)?"Hair Color":Model.FilterHairColor)</option>
                 <option value="Brown">Brown</option>
                 <option value="Red">Red</option>
                 <option value="Black">Black</option>
@@ -32,7 +32,7 @@
 
 
             <select name="YearFound" style="display: inline;">
-                <option value="">Year Found</option>
+                <option value="">@(String.IsNullOrEmpty(Model.FilterYearFound)?"Year Found":Model.FilterYearFound)</option>
                 <option value="1998">1998</option>
                 <option value="2000">2000</option>
                 <option value="2003">2003</option>
@@ -40,13 +40,13 @@
             </select>
 
             <select name="HeadDirection" style="display: inline;">
-                <option value="">Head Direction</option>
+                <option value="">@(String.IsNullOrEmpty(Model.FilterHeadDirection)?"Head Direction":Model.FilterHeadDirection)</option>
                 <option value="East">East</option>
                 <option value="West">West</option>
             </select>
 
             <select name="ArtifactFound" style="display: inline;">
-                <option value="">Artifact Found</option>
+                <option value="">@(String.IsNullOrEmpty(Model.FilterArtifactFound)?"Artifact Found":Model.FilterArtifactFound)</option>
                 <option value="TRUE">Yes</option>
                 <option value="FALSE">No</option>
             </select>

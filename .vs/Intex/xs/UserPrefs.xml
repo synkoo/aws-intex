@@ -1,47 +1,20 @@
-﻿<Properties StartupConfiguration="{F45011B0-4880-4F6A-A4A3-B5BC0593BD8C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Intex/Pages/Burials/Create.cshtml.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{F45011B0-4880-4F6A-A4A3-B5BC0593BD8C}|Default">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Intex/Pages/Burials/Edit.cshtml.cs" Line="106" Column="49" />
-      <File FileName="Intex/Pages/Burials/Edit.cshtml" Line="42" Column="1" />
-      <File FileName="Intex/Pages/Burials/Delete.cshtml.cs" Line="78" Column="49" />
-      <File FileName="Intex/Pages/Burials/DI_BasePageModel.cs" Line="1" Column="1" />
-      <File FileName="Intex/Pages/_ViewImports.cshtml" />
-      <File FileName="Intex/Pages/Burials/Delete.cshtml" Line="516" Column="15" />
-      <File FileName="Intex/Pages/Burials/Index.cshtml" Line="208" Column="15" />
-      <File FileName="Intex/Pages/Burials/Details.cshtml" Line="4" Column="2" />
-      <File FileName="Intex/Pages/Burials/Details.cshtml.cs" Line="76" Column="36" />
-      <File FileName="Intex/Pages/Shared/_Layout.cshtml" Line="46" Column="20" />
-      <File FileName="Intex/Pages/Burials/Create.cshtml" Line="96" Column="1" />
-      <File FileName="Intex/Pages/Burials/Index.cshtml.cs" Line="70" Column="1" />
-      <File FileName="Intex/appsettings.json" />
-      <File FileName="Intex/PaginatedList.cs" />
-      <File FileName="Intex/Pages/Index.cshtml.cs" />
-      <File FileName="Intex/Pages/Burials/Create.cshtml.cs" Line="62" Column="49" />
-      <File FileName="Intex/Startup.cs" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/ConfirmEmail.cshtml" Line="7" Column="1" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/Login.cshtml" Line="59" Column="1" />
-      <File FileName="Intex/Areas/Identity/Pages/_ViewImports.cshtml" />
-      <File FileName="Intex/Areas/Identity/Pages/_ViewStart.cshtml" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/Register.cshtml" Line="26" Column="18" />
-      <File FileName="Intex/Pages/Index.cshtml" Line="59" Column="18" />
-      <File FileName="Intex/Pages/_ViewStart.cshtml" Line="2" Column="15" />
-      <File FileName="Intex/Areas/Identity/Pages/_Layout.cshtml" Line="28" Column="53" />
-      <File FileName="Intex/wwwroot/css/signin.css" />
-      <File FileName="Intex/Pages/Shared/_LoginPartial.cshtml" Line="14" Column="32" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/Logout.cshtml" Line="27" Column="18" />
-      <File FileName="Intex/wwwroot/css/style.css" Line="1" Column="1" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/_ViewImports.cshtml" />
-      <File FileName="Intex/Pages/Burials/List.cshtml" Line="47" Column="20" />
-      <File FileName="Intex/Pages/Burials/List.cshtml.cs" Line="73" Column="14" />
-      <File FileName="Intex/wwwroot/css/discoveries.css" Line="147" Column="1" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" Line="6" Column="77" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/Manage/Index.cshtml" Line="7" Column="1" />
-      <File FileName="Intex/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml" Line="43" Column="23" />
+      <File FileName="Intex/Areas/Identity/Pages/Account/Login.cshtml" Line="13" Column="66" IsPinned="True" />
+      <File FileName="Intex/Areas/Identity/Pages/_Layout.cshtml" IsPinned="True" />
+      <File FileName="Intex/Pages/Burials/Edit.cshtml.cs" Line="21" Column="1" />
+      <File FileName="Intex/Pages/Burials/Edit.cshtml" />
+      <File FileName="Intex/Pages/Burials/Delete.cshtml.cs" />
+      <File FileName="Intex/Pages/Burials/Discoveries.cshtml" Line="18" Column="1" />
+      <File FileName="Intex/Pages/Burials/Discoveries.cshtml.cs" Line="58" Column="1" />
+      <File FileName="Intex/Pages/Burials/Index.cshtml.cs" Line="62" Column="49" />
+      <File FileName="Intex/Pages/Burials/Index.cshtml" Line="63" Column="148" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Intex" expanded="True" selected="True">
+          <Node name="Intex" expanded="True">
             <Node name="Intex" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
@@ -50,7 +23,7 @@
                 <Node name="Identity" expanded="True">
                   <Node name="Pages" expanded="True">
                     <Node name="Account" expanded="True">
-                      <Node name="Manage" expanded="True" />
+                      <Node name="Login.cshtml" selected="True" />
                     </Node>
                   </Node>
                 </Node>
@@ -70,7 +43,6 @@
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True" />
                 <Node name="images" expanded="True" />
-                <Node name="lib" expanded="True" />
               </Node>
             </Node>
           </Node>

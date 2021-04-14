@@ -34,11 +34,11 @@ namespace Intex.Pages.Burials
         public string LengthSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
-        public string Sex { get; set; }
-        public string HairColor { get; set; }
-        public string YearFound { get; set; }
-        public string HeadDirection { get; set; }
-        public string ArtifactFound { get; set; }
+        public string FilterSex { get; set; }
+        public string FilterHairColor { get; set; }
+        public string FilterYearFound { get; set; }
+        public string FilterHeadDirection { get; set; }
+        public string FilterArtifactFound { get; set; }
 
         public PaginatedList<Burial> Burial { get; set; }
 
@@ -55,6 +55,11 @@ namespace Intex.Pages.Burials
             var currentUserId = UserManager.GetUserId(User);
 
             CurrentFilter = searchString;
+            FilterSex = Sex;
+            FilterHairColor = HairColor;
+            FilterYearFound = YearFound;
+            FilterHeadDirection = HeadDirection;
+            FilterArtifactFound = ArtifactFound;
 
             CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -130,7 +135,7 @@ namespace Intex.Pages.Burials
                     burials = burials.OrderBy(b => b.BurialId);
                     break;
             }
-            var pageSize = Configuration.GetValue("PageSize", 11);
+            var pageSize = Configuration.GetValue("PageSize", 10);
 
             Burial = await PaginatedList<Burial>.CreateAsync(burials.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
